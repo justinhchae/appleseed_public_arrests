@@ -105,7 +105,7 @@ At this time, this analysis is inconclusive, but we leave you with four points:
 
 ### Source
 
-The Data Team at Chicago Data Portal (https://data.cityofchicago.org/) granted access to detailed arrest data API for analysts at Chicago Appleseed Center for Fair Courts. Importantly this data contains the date/time stamp of arrest, lockup, release from lockup, and bond court appearance. This analysis would not be possible otherwise.
+The Data Team at [Chicago Data Portal](https://data.cityofchicago.org/) granted access to detailed arrest data API for analysts at Chicago Appleseed Center for Fair Courts. Importantly this data contains the date/time stamp of arrest, lockup, release from lockup, and bond court appearance. This analysis would not be possible otherwise.
 
 
 ### Data
