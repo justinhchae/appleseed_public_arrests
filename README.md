@@ -120,7 +120,7 @@ Police Related and Forcible Flags
 
 Classifying each arrest charge according to the aforementioned schemes proved to be a difficult task. For instance, in this analysis, it sufficed to know whether a charge was primarily concerned with Cannabis at a detailed level and then at a higher level, to know it was generally a Drug related charge. However, in just one instance out of thousands, the charge description varied wildly for a subset of cannabis charges. Further, since a given arrest may have multiple charges and the dataset is updated on a daily basis, it became clear that it is not possible to actively map each charge by hand. Worse yet, there was not a one-to-one mapping that would allow us to derive the classifications according to our chosen scheme based on the remaining fields. 
 
-
+```
 A Sample of Charge Descriptions
 CANNABIS - MFG/DEL - 10-30 GRMS
 CANNABIS - MFG/DEL - 2.5-10 GRMS
@@ -130,7 +130,7 @@ CANNABIS - MFG/DEL - 500-2000 GRMS
 CANNABIS - MFG/DEL - 5000+GRMS
 CANNABIS - MFG/DEL - LESS 2.5 GRMS - UNDER 18
 CANNABIS - MFG/DEL - LESS THAN 2.5 GRMS
-
+```
 
 To solve the classification problem, we applied a matching routine in three phases. 
 First, we used a dictionary to map any charges that happen to match our key directly to a class. For instance, our staff attorney provided a classification by hand for a single instance of “CANNABIS - MFG/DEL 30-500 GRMS.” This first phase accounted for about 85% of all charge classifications. 
