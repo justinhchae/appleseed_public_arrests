@@ -14,8 +14,7 @@ For example, we extracted year, month, and time of day into separate fields. In 
 This is a redacted version of the primary data set that removes information such as name, cb number, and date.
 
 | race  | district | race  | district | race  | district | race  | district |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+
 
 
