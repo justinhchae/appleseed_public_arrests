@@ -20,28 +20,28 @@ However, the resulting fields in the redacted table represent nearly all the dat
 This data is a single table avaialble in either a zipped csv file or a pickle file (exported from the Python Pandas Library)
 
 
-#The fields in this data about the person include:
+The fields in this data about the person include:
 
 | race  |
 
 
-#The fields in this data about the event include:
+The fields in this data about the event include:
 
 | district | beat  |
 
 
-#The fields in this data about the charges include:
+The fields in this data about the charges include:
 
 | charge_1_statute | charge_1_description  | charge_1_type | charge_1_class  | charge_1_statute |
 
 
-#The derived fields in this data about the charges include:
+The derived fields in this data about the charges include:
 
 | charge_1_cat  | charge_1_cat_macro  | police_related_1  | forcible_1  |
 
 
 
-#The derived date and time fields in this data include:
+The derived date and time fields in this data include:
 
 | arrest_year  | arrest_month  | arrest_time  | lockup_time  | release_time  |
 
