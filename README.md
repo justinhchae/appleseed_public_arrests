@@ -164,34 +164,28 @@ CANNABIS - MFG/DEL - LESS 2.5 GRMS - UNDER 18
 CANNABIS - MFG/DEL - LESS THAN 2.5 GRMS
 ```
 
-To solve the classification problem, we applied a matching routine in three phases. 
-First, we used a dictionary to map any charges that happen to match our key directly to a class. For instance, our staff attorney provided a classification by hand for a single instance of “CANNABIS - MFG/DEL 30-500 GRMS.” This first phase accounted for about 85% of all charge classifications. 
+To solve the classification problem, we applied a matching routine in three phases. First, we used a dictionary to map any charges that happen to match our key directly to a class. For instance, our staff attorney provided a classification by hand for a single instance of “CANNABIS - MFG/DEL 30-500 GRMS.” This first phase accounted for about 85% of all charge classifications.
 
+Second, we applied a [fuzzy matching algorithm](https://pypi.org/project/fuzzy-pandas/) to handle cases where the key was off by a small amount. For instance, a fuzzy match allowed the key to map a classification if the text was “GRAMS” instead of “GRMS.” This was especially useful in cases where the text of the allegation was off by just a few characters or spaces but described the same charge. This second phase accounted for between 5-10% of all charge classifications.
 
-Second, we applied a (fuzzy matching algorithm)[https://pypi.org/project/fuzzy-pandas/] to handle cases where the key was off by a small amount. For instance, a fuzzy match allowed the key to map a classification if the text was “GRAMS” instead of “GRMS.” This was especially useful in cases where the text of the allegation was off by just a few characters or spaces but described the same charge. This second phase accounted for between 5-10% of all charge classifications.
-
-
-Third and lastly, we ran the text of the charge description through a natural language processing pipeline, trained a machine learning model on the key, and used the model to classify any remaining charges that the prior two steps missed. For instance, when the words ‘cannabis’ and ‘grms’ appear together with ‘mfg’ and ‘del’, we trained an (SKlearn Naive Bayes classifier)[https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.ComplementNB.html#sklearn.naive_bayes.ComplementNB] to recognise that this is most likely a Cannabis charge. This third phase accounted for between 5-10% of all charge classifications and in testing, had an accuracy of about 80%.
+Third and lastly, we ran the text of the charge description through a natural language processing pipeline, trained a machine learning model on the key, and used the model to classify any remaining charges that the prior two steps missed. For instance, when the words ‘cannabis’ and ‘grms’ appear together with ‘mfg’ and ‘del’, we trained an [SKlearn Naive Bayes classifier](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.ComplementNB.html#sklearn.naive_bayes.ComplementNB) to recognise that this is most likely a Cannabis charge. This third phase accounted for between 5-10% of all charge classifications and in testing, had an accuracy of about 80%.
 
 ### Assumptions
 
 There are three notable assumptions made in this analysis. First, the time difference between arrests and lockup, lockup and release, and arrests to release provides an accurate measure of time phases in police custody. As a result, the primary findings in this post are based on three calculated fields of arrest_to_lockup, lockup_to_release, and arrest_to_release. Second, each row represents an individual person while each column represents data about the person and their time in police custody. Third, the arrest date is the first recorded time in police custody (i.e. handcuffed and in a patrol car), the lockup date is the time a person is booked at a station house (i.e. in a jail cell), and lastly, the release date is the time when a person leaves custody (i.e. released from jail, free to go, or under other court orders).
 
-
 ### Data Quality
+
 The quality of this data is open for interpretation at this time. In addition to the erroneous date issues, there are several others that may require further investigation. For instance, in the police district column, there is a single entry listed as district ‘31’ (which exists as a geographic entity on the map but not as a police district like the others). Further, although we confidently leveraged a classification system with machine learning, it is the first attempt of its kind for our team. As a result it is possible, perhaps even likely, there is an error in up to 10% of the classifications.
 
-
 ### Privacy
+
 To protect privacy of individuals, names, and CB numbers are removed from the dataset. However, demographic information such as race are necessarily included to profile arrest data in sufficient detail. Further, after computing the time phases from arrest to release, the original dates of lockup, release, and bond court appearance are removed from the accompanying dataset. The only remaining dates are the year and month of the arrest as well as the time of day of arrest, lockup, and release from lockup. Although it may be possible to disambiguate any dataset in this day and age, the omitted columns remove as much identifiable information as possible.
 
-
 ### Directions for Next Research
-First, several hundred records are omitted from this analysis because they return erroneous times in detention, i.e. when the lockup date is earlier than the arrest date, it appears a person was detained for a negative amount of time. However, it is not immediately clear whether dates are erroneous due to data entry or whether the timeline of events from arrest to lockup and release is not always linear. In terms of omitted records, future analysis may benefit from scrutinizing the omitted records to (1) validate whether they should be removed and if not, (2) impute dates for erroneous records and increase the quality of this analysis. 
 
+First, several hundred records are omitted from this analysis because they return erroneous times in detention, i.e. when the lockup date is earlier than the arrest date, it appears a person was detained for a negative amount of time. However, it is not immediately clear whether dates are erroneous due to data entry or whether the timeline of events from arrest to lockup and release is not always linear. In terms of omitted records, future analysis may benefit from scrutinizing the omitted records to (1) validate whether they should be removed and if not, (2) impute dates for erroneous records and increase the quality of this analysis.
 
 Second, to the best of our knowledge, our attempt to classify charge records with the two tier scheme, machine learning, and flags for police related and forcible categories is the first of its kind on this dataset. As a result, a follow-on research effort may benefit from evaluating the efficacy of this model to both classify charges and understand their meaning when combined in analysis. Applications to databases of charge descriptions from other jurisdictions may also provide interesting insights in the context of national classification systems.
 
-
 Third, this initial article explores only a narrow portion of the data; however, other important features are not analyzed in detail. For instance, there are features for Felony and Misdemeanor, Charge Class, Police-Related, and Forcible that we tagged or processed but did not analyze. An immediate opportunity for research is to apply a similar classification scheme to all secondary charges since some cases, in actuality, have three or four charges after the lead charge. Further, there may be opportunities to combine arrest records with police attendance data to understand the relationships between aspects of police misconduct and excessive holding times, for example. 
-
