@@ -59,6 +59,30 @@ This data is a single table avaialble in either a zipped csv file or a pickle fi
 | arrest_year  | arrest_month  | arrest_time  | lockup_time  | release_time  |
 
 
+* Each date or time field is extracted from a datetime data type and represented here as integers (year and month) and 24-hour time values (objects).
+* Example: arrest_year (2018, 2019, 2020, ...). arrest_month (1, 2, 3, ...). arrest_time (17:00:00, 18:11:00, 20:16:00, ...)
+* Note: Time timestamp values are created using the pandas dt.time extractor based on the original data's datetime columns.
+
+
+## How to Use this Data
+* The easiest method is to download and unzip the csv file and analyze the data with any system of your choosing. However, for convenience we exported a pickled file from our Python project. The pickled file has the data types encoded directly into the file so categorical values maintain their categories. For instance, we leveraged Pandas DataFrames and set columns with the categorical value as a dtype.
+
+* Download the .pickle file. From a Python 3.x environment the following code snippet may help read and process the data. 
+```
+# given a file (arrests_analysis_public.pickle) in a folder called data
+
+import pandas as pd
+
+df = pd.read_pickle('data/arrests_analysis_public.pickle')
+
+print(df.head())
+
+# >>> output:
+
+    race district  beat bond_type_cd bond_amt     charge_1_statute  \...
+0  BLACK        6  0623        IBOND     1500  720 ILCS 5.0/12-1-A  \...
+1  BLACK        6  0634        IBOND     1500   720 ILCS 550.0/4-A  \...
+```
 
 
 
