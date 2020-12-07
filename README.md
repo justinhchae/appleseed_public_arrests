@@ -111,22 +111,22 @@ At this time, this analysis is inconclusive, but we leave you with four points:
 
 ## Methodology
 
-#### Source
+### Source
 The Data Team at Chicago Data Portal (https://data.cityofchicago.org/) granted access to detailed arrest data API for analysts at Chicago Appleseed Center for Fair Courts. Importantly this data contains the date/time stamp of arrest, lockup, release from lockup, and bond court appearance. This analysis would not be possible otherwise.
 
 
-#### Data
+### Data
 The dataset was initially bulk downloaded on 14 October 2020 and contains 535,314 records. After initial analysis of the data and in preparation for this post, the dataset was downloaded again on 27 October 2020 and contains a total of 536,770 records. In both cases, a cleaning routine was applied in two phases. First, records with erroneous dates were filtered out, i.e. those that produce negative holding times. Second, the lead charge description was standardized from several thousand variations into two tiers of categories. In sum, the analysis accounts for approximately 536,000 records spanning a period of 6 years from 2014 to 2020.
 
 
-#### Erroneous Records
+### Erroneous Records
 To calculate time phases in arrest data, this analysis assumes there is a timeline of linear events that starts with arrest, proceeds to lockup, and ends in either a release from lockup or a court date. For example, erroneous records are tagged and omitted wherever the lockup or release date pre-dates the arrest date. There are other records that may be considered erroneous such as when the age of a person is over 100 years old (these exist); however, since the age of a person is not taken into account, as long as the other fields are valid, they are not omitted. Least, but perhaps most importantly, there are a number of extreme outliers in holding times that were excluded for this analysis. For example, there is a single holding time at 1,900 hours and a dozen or so between 100 and 500 hours - are these real cases or clerical errors?
 
 
-#### Charge Categorization
+### Charge Categorization
 To make sense of charges, this analysis categorizes each record according to two tiers. Our senior staff attorney hand classified several thousand records to create a mapping key from charge description to charge category to create 39 detailed classifications (Tier 2). The detailed classifications were further grouped into eight primary categories (Tier 1). Using the mapping table and classification guide, we leveraged a combination of algorithms to match and classify each arrest record’s charges to a category.
 
-#### Charge Classification Categories
+### Charge Classification Categories
 
 | Tier 2 (Micro Cat) | Tier 1 (Macro Cat) |
 | ------------- | ------------- |
@@ -142,7 +142,7 @@ To make sense of charges, this analysis categorizes each record according to two
 
 Although not explicitly leveraged in this story, we also applied a similar method to tagging whether a given charge is policed-related or not. In addition, whether a charge is considered a ‘forcible’ crime. For instance, a police-related charge is largely characterized by resisting arrest or assault against a police officer. Similarly, a forcible classification usually includes charges involving battery but not weapons charges. The following table is an example table used to classify the main dataset. Note: the police and forcible flags were primarily created based on the text of the charge description and not the Tier 2 classification. 
 
-#### Police Related and Forcible Flags
+### Police Related and Forcible Flags
 
 
 | Tier 2 (Micro Cat) | police_related| forcible |
@@ -156,6 +156,7 @@ Although not explicitly leveraged in this story, we also applied a similar metho
 | Resisting Arrest/Obstructing Officer  | TRUE  | FALSE  |
 | Vehicle/Traffic  | TRUE  | FALSE  |
 
+### Data Classification and Machine Learning
 
 Classifying each arrest charge according to the aforementioned schemes proved to be a difficult task. For instance, in this analysis, it sufficed to know whether a charge was primarily concerned with Cannabis at a detailed level and then at a higher level, to know it was generally a Drug related charge. However, in just one instance out of thousands, the charge description varied wildly for a subset of cannabis charges. Further, since a given arrest may have multiple charges and the dataset is updated on a daily basis, it became clear that it is not possible to actively map each charge by hand. Worse yet, there was not a one-to-one mapping that would allow us to derive the classifications according to our chosen scheme based on the remaining fields. 
 
@@ -180,20 +181,20 @@ Second, we applied a fuzzy matching algorithm (https://pypi.org/project/fuzzy-pa
 
 Third and lastly, we ran the text of the charge description through a natural language processing pipeline, trained a machine learning model on the key, and used the model to classify any remaining charges that the prior two steps missed. For instance, when the words ‘cannabis’ and ‘grms’ appear together with ‘mfg’ and ‘del’, we trained a Complement Naive Bayes algorithm (https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.ComplementNB.html#sklearn.naive_bayes.ComplementNB) to recognise that this is most likely a Cannabis charge. This third phase accounted for between 5-10% of all charge classifications and in testing, had an accuracy of about 80%.
 
-#### Assumptions
+### Assumptions
 
 There are three notable assumptions made in this analysis. First, the time difference between arrests and lockup, lockup and release, and arrests to release provides an accurate measure of time phases in police custody. As a result, the primary findings in this post are based on three calculated fields of arrest_to_lockup, lockup_to_release, and arrest_to_release. Second, each row represents an individual person while each column represents data about the person and their time in police custody. Third, the arrest date is the first recorded time in police custody (i.e. handcuffed and in a patrol car), the lockup date is the time a person is booked at a station house (i.e. in a jail cell), and lastly, the release date is the time when a person leaves custody (i.e. released from jail, free to go, or under other court orders).
 
 
-#### Data Quality
+### Data Quality
 The quality of this data is open for interpretation at this time. In addition to the erroneous date issues, there are several others that may require further investigation. For instance, in the police district column, there is a single entry listed as district ‘31’ (which does not exist). Further, although we confidently leveraged a classification system with machine learning, it is the first attempt of its kind for our team. As a result it is possible, perhaps even likely, there is a small error rate in classifications.
 
 
-#### Privacy
+### Privacy
 To protect privacy of individuals, names, and CB numbers are removed from the dataset. However, demographic information such as race are necessarily included to profile arrest data in sufficient detail. Further, after computing the time phases from arrest to release, the original dates of lockup, release, and bond court appearance are removed from the accompanying dataset. The only remaining dates are the date of arrest for each record. Although it may be possible to disambiguate any dataset in this day and age, the omitted columns remove as much identifiable information as possible.
 
 
-#### Directions for Next Research
+### Directions for Next Research
 First, several hundred records are omitted from this analysis because they return erroneous times in detention, i.e. when the lockup date is earlier than the arrest date, it appears a person was detained for a negative amount of time. However, it is not immediately clear whether dates are erroneous due to data entry or whether the timeline of events from arrest to lockup and release is not always linear. In terms of omitted records, future analysis may benefit from scrutinizing the omitted records to (1) validate whether they should be removed and if not, (2) impute dates for erroneous records and increase the quality of this analysis. 
 
 
