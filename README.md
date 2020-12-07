@@ -54,6 +54,10 @@ This data is a single table avaialble in either a zipped csv file or a pickle fi
 * Police Related and Foricible encode additional dimentions about the charge represented as categorical data types (boolean).
 * Example: charge_1_description (RESISTING/OBSTRUCT/PC OFF/CORR EMP/FRFTR INJ) becomes police_related_1 (TRUE) and charge_1_description (AGG BATTERY/PEACE OFFICER) becomes police_related_1 (TRUE) and forcible_1 (TRUE).
 
+
+![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Charges_6_time.png?raw=true)
+
+
 ### The derived date and time fields in this data include:
 
 | arrest_year  | arrest_month  | arrest_time  | lockup_time  | release_time  |
