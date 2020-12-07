@@ -183,7 +183,7 @@ There are three notable assumptions made in this analysis. First, the time diffe
 
 
 ### Data Quality
-The quality of this data is open for interpretation at this time. In addition to the erroneous date issues, there are several others that may require further investigation. For instance, in the police district column, there is a single entry listed as district ‘31’ (which does not exist). Further, although we confidently leveraged a classification system with machine learning, it is the first attempt of its kind for our team. As a result it is possible, perhaps even likely, there is a small error rate in classifications.
+The quality of this data is open for interpretation at this time. In addition to the erroneous date issues, there are several others that may require further investigation. For instance, in the police district column, there is a single entry listed as district ‘31’ (which exists as a geographic entity on the map but not as a police district like the others). Further, although we confidently leveraged a classification system with machine learning, it is the first attempt of its kind for our team. As a result it is possible, perhaps even likely, there is an error in up to 10% of the classifications.
 
 
 ### Privacy
