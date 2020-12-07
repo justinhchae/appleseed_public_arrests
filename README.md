@@ -17,7 +17,7 @@ Fortunately, we were able to obtain access to the full dataset thanks to the Dat
 ## This Data
 To provide transparency in our analysis and to assist others who many be interested in this data, we are sharing a redacted version of the arrest data.
 
-To protect the privacy of individuals, this redacted version of the primary data set removes information such as name, cb number, and date.
+To protect the privacy of individuals, this redacted version of the data removes information such as name, cb number, and date.
 However, the resulting fields in the redacted table represent nearly all the data used in the analysis and may be quite helpful in other areas.
 
 This data is a single table avaialble in either a zipped csv file or a pickle file (exported from the Python Pandas Library). Each row is an instance of an arrest that resulted in a charge. Each arrest fields that describt the arrested person, police, times, and the nature of the lead charge (charge 1) and follow-on charges if they exist (charge 2, charge 3, charge 4, etc). For this analysis, we focused on charge 1 and started charge 2 but have not completed analysis of multiple charges, yet.
