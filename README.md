@@ -72,8 +72,9 @@ This data is a single table avaialble in either a zipped csv file or a pickle fi
 
 * The easiest method is to download and unzip the csv file and analyze the data with any system of your choosing. However, for convenience we exported a pickled file from a Pandas DataFrame. The pickled file has the data types encoded directly into the file so categorical values maintain their categories. For instance, we leveraged Pandas DataFrames and set columns with the categorical value as a dtype.
 
-* Download the [.pickle file](https://github.com/justinhchae/appleseed_public_arrests/blob/main/data/arrests_analysis_public.pickle?raw=true). From a Python 3.x environment the following code snippet may help read and process the data. 
-```
+* Download the [.pickle file](https://github.com/justinhchae/appleseed_public_arrests/blob/main/data/arrests_analysis_public.pickle?raw=true). From a Python 3.x environment the following code snippet may help read and process the data.
+
+```python
 # given a file (arrests_analysis_public.pickle) in a folder called data
 
 import pandas as pd
@@ -103,18 +104,20 @@ At this time, this analysis is inconclusive, but we leave you with four points:
 ## Methodology
 
 ### Source
+
 The Data Team at Chicago Data Portal (https://data.cityofchicago.org/) granted access to detailed arrest data API for analysts at Chicago Appleseed Center for Fair Courts. Importantly this data contains the date/time stamp of arrest, lockup, release from lockup, and bond court appearance. This analysis would not be possible otherwise.
 
 
 ### Data
+
 The dataset was initially bulk downloaded on 14 October 2020 and contains 535,314 records. After initial analysis of the data and in preparation for this post, the dataset was downloaded again on 27 October 2020 and contains a total of 536,770 records. In both cases, a cleaning routine was applied in two phases. First, records with erroneous dates were filtered out, i.e. those that produce negative holding times. Second, the lead charge description was standardized from several thousand variations into two tiers of categories. In sum, the analysis accounts for approximately 536,000 records spanning a period of 6 years from 2014 to 2020.
 
-
 ### Erroneous Records
+
 To calculate time phases in arrest data, this analysis assumes there is a timeline of linear events that starts with arrest, proceeds to lockup, and ends in either a release from lockup or a court date. For example, erroneous records are tagged and omitted wherever the lockup or release date pre-dates the arrest date. There are other records that may be considered erroneous such as when the age of a person is over 100 years old (these exist); however, since the age of a person is not taken into account, as long as the other fields are valid, they are not omitted. Least, but perhaps most importantly, there are a number of extreme outliers in holding times that were excluded for this analysis. For example, there is a single holding time at 1,900 hours and a dozen or so between 100 and 500 hours - are these real cases or clerical errors?
 
-
 ### Charge Categorization
+
 To make sense of charges, this analysis categorizes each record according to two tiers. Our senior staff attorney hand classified several thousand records to create a mapping key from charge description to charge category to create 39 detailed classifications (Tier 2). The detailed classifications were further grouped into eight primary categories (Tier 1). Using the mapping table and classification guide, we leveraged a combination of algorithms to match and classify each arrest record’s charges to a category.
 
 ### Charge Classification Categories
@@ -130,11 +133,9 @@ To make sense of charges, this analysis categorizes each record according to two
 | Tobacco, Nuisance, Disorderly/Reckless Conduct, Gambling, Resisting Arrest/Obstructing Officer, Prostitution, Registry, Escape  | PublicOrder  |
 | Other  | Other  |
 
-
-Although not explicitly leveraged in this story, we also applied a similar method to tagging whether a given charge is policed-related or not. In addition, whether a charge is considered a ‘forcible’ crime. For instance, a police-related charge is largely characterized by resisting arrest or assault against a police officer. Similarly, a forcible classification usually includes charges involving battery but not weapons charges. The following table is an example table used to classify the main dataset. Note: the police and forcible flags were primarily created based on the text of the charge description and not the Tier 2 classification. 
+Although not explicitly leveraged in this story, we also applied a similar method to tagging whether a given charge is policed-related or not. In addition, whether a charge is considered a ‘forcible’ crime. For instance, a police-related charge is largely characterized by resisting arrest or assault against a police officer. Similarly, a forcible classification usually includes charges involving battery but not weapons charges. The following table is an example table used to classify the main dataset. Note: the police and forcible flags were primarily created based on the text of the charge description and not the Tier 2 classification.
 
 ### Police Related and Forcible Flags
-
 
 | Tier 2 (Micro Cat) | police_related| forcible |
 | ------------- | ------------- | ------------- |
@@ -151,7 +152,7 @@ Although not explicitly leveraged in this story, we also applied a similar metho
 
 Classifying each arrest charge according to the aforementioned schemes proved to be a difficult task. For instance, in this analysis, it sufficed to know whether a charge was primarily concerned with Cannabis at a detailed level and then at a higher level, to know it was generally a Drug related charge. However, in just one instance out of thousands, the charge description varied wildly for a subset of cannabis charges. Further, since a given arrest may have multiple charges and the dataset is updated on a daily basis, it became clear that it is not possible to actively map each charge by hand. Worse yet, there was not a one-to-one mapping that would allow us to derive the classifications according to our chosen scheme based on the remaining fields. 
 
-```
+```plain
 A Sample of Charge Descriptions
 CANNABIS - MFG/DEL - 10-30 GRMS
 CANNABIS - MFG/DEL - 2.5-10 GRMS
