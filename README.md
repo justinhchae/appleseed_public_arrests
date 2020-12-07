@@ -16,9 +16,7 @@ To provide transparency in our analysis and to assist others who many be interes
 To protect the privacy of individuals, this redacted version of the primary data set removes information such as name, cb number, and date.
 However, the resulting fields in the redacted table represent nearly all the data used in the analysis and may be quite helpful in other areas.
 
-
 This data is a single table avaialble in either a zipped csv file or a pickle file (exported from the Python Pandas Library)
-
 
 ### The fields in this data about the person include:
 
@@ -30,7 +28,6 @@ This data is a single table avaialble in either a zipped csv file or a pickle fi
 
 ![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Charges_3_race.png?raw=true)
 
-
 ### The fields in this data about the event include:
 
 | district | beat  |
@@ -38,9 +35,7 @@ This data is a single table avaialble in either a zipped csv file or a pickle fi
 * Police District and Police Beat number are numbers represented as a categorical data types.
 * Example: District (6, 11, 7). Beat (623, 414, 1122).
 
-
 ![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Charges_4_district.png?raw=true)
-
 
 ### The fields in this data about the charges include:
 
@@ -49,9 +44,7 @@ This data is a single table avaialble in either a zipped csv file or a pickle fi
 * Charge Statute, Descriptions, Type, and Class are provided exactly as given by the Chicago Data Portal and are represented as text.
 * Example: Statute (720 ILCS 5.0/12-1-A). Description (DRIVING/NEVER ISSUED LICENSE). Type (M for Misdemeanor and F for Felony). Class (1 for Class 1 through Class 4, A, B, X...)
 
-
 ![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Charges_2_detailed.png?raw=true)
-
 
 ### The derived fields in this data about the charges include:
 
@@ -63,18 +56,15 @@ This data is a single table avaialble in either a zipped csv file or a pickle fi
 * Police Related and Foricible encode additional dimentions about the charge represented as categorical data types (boolean).
 * Example: charge_1_description (RESISTING/OBSTRUCT/PC OFF/CORR EMP/FRFTR INJ) becomes police_related_1 (TRUE) and charge_1_description (AGG BATTERY/PEACE OFFICER) becomes police_related_1 (TRUE) and forcible_1 (TRUE).
 
-
-![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Charges_6_time.png?raw=true)
-
-
 ### The derived date and time fields in this data include:
 
 | arrest_year  | arrest_month  | arrest_time  | lockup_time  | release_time  |
 
-
 * Each date or time field is extracted from a datetime data type and represented here as integers (year and month) and 24-hour time values (objects).
 * Example: arrest_year (2018, 2019, 2020, ...). arrest_month (1, 2, 3, ...). arrest_time (17:00:00, 18:11:00, 20:16:00, ...)
 * Note: Time timestamp values are created using the pandas dt.time extractor based on the original data's datetime columns.
+
+![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Charges_6_time.png?raw=true)
 
 
 ## How to Use this Data
