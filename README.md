@@ -11,10 +11,30 @@ Based on a bulk download of this data, we transformed several columns to help ma
 For example, we extracted year, month, and time of day into separate fields. In addition, we classified every charge into a set of grouped categories.
 
 ## This Data
-This is a redacted version of the primary data set that removes information such as name, cb number, and date.
+To provide transparency in our analysis and to assist others who many be interested in this data, we are sharing a redacted version of the arrest data.
 
-| race  | district | race  | district | race  | district | race  | district |
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+To protect the privacy of individuals, this redacted version of the primary data set removes information such as name, cb number, and date.
+However, the resulting fields in the redacted table represent nearly all the data used in the analysis and may be quite helpful in other areas.
+
+
+This data is a single table avaialble in either a zipped csv file or a pickle file (exported from the Python Pandas Library)
+
+
+The fields in this data about the person include:
+
+| race  |
+
+
+The fields in this data about the event include:
+
+| district | beat  |
+
+
+The fields in this data about the charges include:
+
+| charge_1_statute | charge_1_description  | charge_1_type | charge_1_class  | charge_1_statute | charge_1_cat  | charge_1_cat_macro  |
+
+
 
 
 
