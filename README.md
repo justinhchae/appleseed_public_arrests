@@ -5,7 +5,7 @@ readme
 Project Title: Exploring Detailed Chicago Police Arrest Data
 
 ## Project Summary 
-This [data](https://github.com/justinhchae/appleseed_public_arrests/tree/main/data) is based on a preimilary analysis of detailed arrest data from the (Chicago Data Portal)[https://data.cityofchicago.org/]. The data is significant becuase the data, at times, has not been avaialble at all, or it was available without certain datapoints. For instance, these arrest records contain the datetime stamps for arrest, lockup, release from lockup and bond date which have not always been available.
+This [data](https://github.com/justinhchae/appleseed_public_arrests/tree/main/data) is based on a preimilary analysis of detailed arrest data from the [Chicago Data Portal](https://data.cityofchicago.org/). The data is significant becuase the data, at times, has not been avaialble at all, or it was available without certain datapoints. For instance, these arrest records contain the datetime stamps for arrest, lockup, release from lockup and bond date which have not always been available.
 
 
 Fortunately, we were able to obtain access to the full dataset thanks to the Data Portal team. Based on a bulk download of CPD data, we transformed several columns to help make sense of the data. For example, we extracted year, month, and time of day into separate fields. In addition, we classified every charge into a set of grouped categories. In the resulting dataset, we believe we've added value to this publically available data by categorizing date and time columns and adding classifications to charge descriptions. 
