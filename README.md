@@ -20,7 +20,7 @@ However, the resulting fields in the redacted table represent nearly all the dat
 This data is a single table avaialble in either a zipped csv file or a pickle file (exported from the Python Pandas Library)
 
 
-The fields in this data about the person include:
+###### The fields in this data about the person include:
 
 | race  |
 
@@ -28,7 +28,7 @@ The fields in this data about the person include:
 * Example: BLACK, WHITE HISPANIC, ASIAN / PACIFIC ISLANDER
 
 
-# The fields in this data about the event include:
+###### The fields in this data about the event include:
 
 | district | beat  |
 
@@ -36,7 +36,7 @@ The fields in this data about the person include:
 * Example: District (6, 11, 7). Beat (623, 414, 1122).
 
 
-# The fields in this data about the charges include:
+###### The fields in this data about the charges include:
 
 | charge_1_statute | charge_1_description  | charge_1_type | charge_1_class  |
 
@@ -44,16 +44,17 @@ The fields in this data about the person include:
 * Example: Statute (720 ILCS 5.0/12-1-A). Description (DRIVING/NEVER ISSUED LICENSE). Type (M for Misdemeanor and F for Felony). Class (1 for Class 1 through Class 4, A, B, X...)
 
 
-
-
-# The derived fields in this data about the charges include:
+###### The derived fields in this data about the charges include:
 
 | charge_1_cat  | charge_1_cat_macro  | police_related_1  | forcible_1  |
 
-* Police District and Police Beat number are numbers represented as a categorical data types.
-* Example: District (6, 11, 7). Beat (623, 414, 1122).
+* Charge Category and Charge Category Macro are a two-tiered classification system that encode the charge descriptions represented as categorical data types.
+* Example: charge_1_description (CANNABIS - POSSESS LESS THAN 2.5 GRMS) becomes charge_1_cat (CANNABIS) and charge_1_cat_macro (Drug)
 
-# The derived date and time fields in this data include:
+* Police Related and Foricible encode additional dimentions about the charge represented as categorical data types (boolean).
+* Example: charge_1_description (RESISTING/OBSTRUCT/PC OFF/CORR EMP/FRFTR INJ) becomes police_related_1 (TRUE) and charge_1_description (AGG BATTERY/PEACE OFFICER) becomes police_related_1 (TRUE) and forcible_1 (TRUE).
+
+###### The derived date and time fields in this data include:
 
 | arrest_year  | arrest_month  | arrest_time  | lockup_time  | release_time  |
 
