@@ -1,6 +1,6 @@
 # appleseed_public_arrests data
 
-Project Title: Exploring Detailed Chicago Police Arrest Data
+## Project Title: Exploring Detailed Chicago Police Arrest Data
 
 ## Project Summary  
 
@@ -188,4 +188,4 @@ First, several hundred records are omitted from this analysis because they retur
 
 Second, to the best of our knowledge, our attempt to classify charge records with the two tier scheme, machine learning, and flags for police related and forcible categories is the first of its kind on this dataset. As a result, a follow-on research effort may benefit from evaluating the efficacy of this model to both classify charges and understand their meaning when combined in analysis. Applications to databases of charge descriptions from other jurisdictions may also provide interesting insights in the context of national classification systems.
 
-Third, this initial article explores only a narrow portion of the data; however, other important features are not analyzed in detail. For instance, there are features for Felony and Misdemeanor, Charge Class, Police-Related, and Forcible that we tagged or processed but did not analyze. An immediate opportunity for research is to apply a similar classification scheme to all secondary charges since some cases, in actuality, have three or four charges after the lead charge. Further, there may be opportunities to combine arrest records with police attendance data to understand the relationships between aspects of police misconduct and excessive holding times, for example. 
+Third, this initial article explores only a narrow portion of the data; however, other important features are not analyzed in detail. For instance, there are features for Felony and Misdemeanor, Charge Class, Police-Related, and Forcible that we tagged or processed but did not analyze. An immediate opportunity for research is to apply a similar classification scheme to all secondary charges since some cases, in actuality, have three or four charges after the lead charge. Further, there may be opportunities to combine arrest records with police attendance data to understand the relationships between aspects of police misconduct and excessive holding times, for example.
