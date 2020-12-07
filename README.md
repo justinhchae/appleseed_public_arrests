@@ -81,7 +81,7 @@ This data is a single table avaialble in either a zipped csv file or a pickle fi
 ## How to Use this Data
 * The easiest method is to download and unzip the csv file and analyze the data with any system of your choosing. However, for convenience we exported a pickled file from a Pandas DataFrame. The pickled file has the data types encoded directly into the file so categorical values maintain their categories. For instance, we leveraged Pandas DataFrames and set columns with the categorical value as a dtype.
 
-* Download the .pickle file. From a Python 3.x environment the following code snippet may help read and process the data. 
+* Download the (.pickle file)[https://github.com/justinhchae/appleseed_public_arrests/blob/main/data/arrests_analysis_public.pickle?raw=true]. From a Python 3.x environment the following code snippet may help read and process the data. 
 ```
 # given a file (arrests_analysis_public.pickle) in a folder called data
 
