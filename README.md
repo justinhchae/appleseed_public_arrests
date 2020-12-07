@@ -107,7 +107,6 @@ At this time, this analysis is inconclusive, but we leave you with four points:
 
 The Data Team at [Chicago Data Portal](https://data.cityofchicago.org/) granted access to detailed arrest data API for analysts at Chicago Appleseed Center for Fair Courts. Importantly this data contains the date/time stamp of arrest, lockup, release from lockup, and bond court appearance. This analysis would not be possible otherwise.
 
-
 ### Data
 
 The dataset was initially bulk downloaded on 14 October 2020 and contains 535,314 records. After initial analysis of the data and in preparation for this post, the dataset was downloaded again on 27 October 2020 and contains a total of 536,770 records. In both cases, a cleaning routine was applied in two phases. First, records with erroneous dates were filtered out, i.e. those that produce negative holding times. Second, the lead charge description was standardized from several thousand variations into two tiers of categories. In sum, the analysis accounts for approximately 536,000 records spanning a period of 6 years from 2014 to 2020.
