@@ -117,13 +117,13 @@ To make sense of charges, this analysis categorizes each record according to two
 | Tier 2 (Micro Cat) | Tier 1 (Macro Cat) |
 | ------------- | ------------- |
 | Violation of Release, Warrant/FTA  | CourtRelated  |
-| Assault  | TRUE  |
-| Disorderly/Reckless Conduct  | TRUE  |
-| Escape  | TRUE  |
-| Firearm Discharge  | TRUE  |
-| Other  | TRUE  |
-| Resisting Arrest/Obstructing Officer  | TRUE  |
-| Vehicle/Traffic  | TRUE  |
+| Cannabis, Narcotics  | Drug  |
+| Assault, Battery, Domestic Violence, Murder-1st Degree, Harassment/Stalking/Intimidation, Child/Minor Related, Homicide (Not 1st Degree), Kidnapping, Sex Crime, VOOP  | Person  |
+| DUI, DSL, Vehicle/Traffic  | Vehicle  |
+| Firearm Discharge, Weapon - Non-Firearm, Gun Possession  | Weapon  |
+| Trespass, PSMV/CTTV, Criminal Damage, Arson, Retail Theft, Burglary, Theft, Robbery, Fraud/ID Theft, Fraud/Theft  | Property  |
+| Tobacco, Nuisance, Disorderly/Reckless Conduct, Gambling, Resisting Arrest/Obstructing Officer, Prostitution, Registry, Escape  | PublicOrder  |
+| Other  | Other  |
 
 
 Although not explicitly leveraged in this story, we also applied a similar method to tagging whether a given charge is policed-related or not. In addition, whether a charge is considered a ‘forcible’ crime. For instance, a police-related charge is largely characterized by resisting arrest or assault against a police officer. Similarly, a forcible classification usually includes charges involving battery but not weapons charges. The following table is an example table used to classify the main dataset. Note: the police and forcible flags were primarily created based on the text of the charge description and not the Tier 2 classification. 
