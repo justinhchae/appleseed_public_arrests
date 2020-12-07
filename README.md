@@ -36,6 +36,9 @@ This data is a single table avaialble in either a zipped csv file or a pickle fi
 * Example: District (6, 11, 7). Beat (623, 414, 1122).
 
 
+![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Charges_4_district.png?raw=true)
+
+
 ### The fields in this data about the charges include:
 
 | charge_1_statute | charge_1_description  | charge_1_type | charge_1_class  |
