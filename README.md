@@ -10,6 +10,12 @@ For instance, these arrest records contain the datetime stamps for arrest, locku
 Based on a bulk download of this data, we transformed several columns to help make sense of the data. 
 For example, we extracted year, month, and time of day into separate fields. In addition, we classified every charge into a set of grouped categories.
 
-## Data Transformations
+## This Data
+This is a redacted version of the primary data set that removes information such as name, cb number, and date.
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
 
