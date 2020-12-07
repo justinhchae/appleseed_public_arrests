@@ -187,7 +187,7 @@ The quality of this data is open for interpretation at this time. In addition to
 
 
 ### Privacy
-To protect privacy of individuals, names, and CB numbers are removed from the dataset. However, demographic information such as race are necessarily included to profile arrest data in sufficient detail. Further, after computing the time phases from arrest to release, the original dates of lockup, release, and bond court appearance are removed from the accompanying dataset. The only remaining dates are the date of arrest for each record. Although it may be possible to disambiguate any dataset in this day and age, the omitted columns remove as much identifiable information as possible.
+To protect privacy of individuals, names, and CB numbers are removed from the dataset. However, demographic information such as race are necessarily included to profile arrest data in sufficient detail. Further, after computing the time phases from arrest to release, the original dates of lockup, release, and bond court appearance are removed from the accompanying dataset. The only remaining dates are the year and month of the arrest as well as the time of day of arrest, lockup, and release from lockup. Although it may be possible to disambiguate any dataset in this day and age, the omitted columns remove as much identifiable information as possible.
 
 
 ### Directions for Next Research
