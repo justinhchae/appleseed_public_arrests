@@ -24,6 +24,8 @@ The fields in this data about the person include:
 
 | race  |
 
+* Race is a string represented as a categorical data type.
+* Example: BLACK, WHITE HISPANIC, ASIAN / PACIFIC ISLANDER
 
 The fields in this data about the event include:
 
