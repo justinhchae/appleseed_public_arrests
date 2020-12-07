@@ -27,23 +27,33 @@ The fields in this data about the person include:
 * Race is a string represented as a categorical data type.
 * Example: BLACK, WHITE HISPANIC, ASIAN / PACIFIC ISLANDER
 
-The fields in this data about the event include:
+
+# The fields in this data about the event include:
 
 | district | beat  |
 
-
-The fields in this data about the charges include:
-
-| charge_1_statute | charge_1_description  | charge_1_type | charge_1_class  | charge_1_statute |
+* Police District and Police Beat number are numbers represented as a categorical data types.
+* Example: District (6, 11, 7). Beat (623, 414, 1122).
 
 
-The derived fields in this data about the charges include:
+# The fields in this data about the charges include:
+
+| charge_1_statute | charge_1_description  | charge_1_type | charge_1_class  |
+
+* Charge Statute, Descriptions, Type, and Class are provided exactly as given by the Chicago Data Portal and are represented as text.
+* Example: Statute (720 ILCS 5.0/12-1-A). Description (DRIVING/NEVER ISSUED LICENSE). Type (M for Misdemeanor and F for Felony). Class (1 for Class 1 through Class 4, A, B, X...)
+
+
+
+
+# The derived fields in this data about the charges include:
 
 | charge_1_cat  | charge_1_cat_macro  | police_related_1  | forcible_1  |
 
+* Police District and Police Beat number are numbers represented as a categorical data types.
+* Example: District (6, 11, 7). Beat (623, 414, 1122).
 
-
-The derived date and time fields in this data include:
+# The derived date and time fields in this data include:
 
 | arrest_year  | arrest_month  | arrest_time  | lockup_time  | release_time  |
 
