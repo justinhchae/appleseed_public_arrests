@@ -1,9 +1,11 @@
+readme
+
 # appleseed_public_arrests data
 
 Project Title: Exploring Detailed Chicago Police Arrest Data
 
 ## Project Summary 
-This data is based on a preimilary analysis of detailed arrest data from the Chicago Data Portal. The data is significant becuase the data, at times, has not been avaialble at all, or it was available without certain datapoints.
+This data is based on a preimilary analysis of detailed arrest data from the Chicago Data Portal. The data is significant becuase the data, at times, has not been avaialble at all, or it was available without certain datapoints. This repository is a complement to an article on findings and analysis.
 
 
 For instance, these arrest records contain the datetime stamps for arrest, lockup, release from lockup and bond date which have not always been available.
