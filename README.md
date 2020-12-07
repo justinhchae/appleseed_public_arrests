@@ -44,6 +44,9 @@ This data is a single table avaialble in either a zipped csv file or a pickle fi
 * Example: Statute (720 ILCS 5.0/12-1-A). Description (DRIVING/NEVER ISSUED LICENSE). Type (M for Misdemeanor and F for Felony). Class (1 for Class 1 through Class 4, A, B, X...)
 
 
+![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Charges_2_detailed.png?raw=true)
+
+
 ### The derived fields in this data about the charges include:
 
 | charge_1_cat  | charge_1_cat_macro  | police_related_1  | forcible_1  |
