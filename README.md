@@ -111,22 +111,36 @@ To calculate time phases in arrest data, this analysis assumes there is a timeli
 
 #### Charge Categorization
 To make sense of charges, this analysis categorizes each record according to two tiers. Our senior staff attorney hand classified several thousand records to create a mapping key from charge description to charge category to create 39 detailed classifications (Tier 2). The detailed classifications were further grouped into eight primary categories (Tier 1). Using the mapping table and classification guide, we leveraged a combination of algorithms to match and classify each arrest record’s charges to a category.
-Charge Classification Categories
+
+#### Charge Classification Categories
+
+| Tier 2 (Micro Cat) | Tier 1 (Macro Cat) |
+| ------------- | ------------- |
+| Violation of Release, Warrant/FTA  | CourtRelated  |
+| Assault  | TRUE  |
+| Disorderly/Reckless Conduct  | TRUE  |
+| Escape  | TRUE  |
+| Firearm Discharge  | TRUE  |
+| Other  | TRUE  |
+| Resisting Arrest/Obstructing Officer  | TRUE  |
+| Vehicle/Traffic  | TRUE  |
+
+
+Although not explicitly leveraged in this story, we also applied a similar method to tagging whether a given charge is policed-related or not. In addition, whether a charge is considered a ‘forcible’ crime. For instance, a police-related charge is largely characterized by resisting arrest or assault against a police officer. Similarly, a forcible classification usually includes charges involving battery but not weapons charges. The following table is an example table used to classify the main dataset. Note: the police and forcible flags were primarily created based on the text of the charge description and not the Tier 2 classification. 
+
+#### Police Related and Forcible Flags
+
 
 | Tier 2 (Micro Cat) | police_related| forcible |
 | ------------- | ------------- | ------------- |
 | Battery  | TRUE  | TRUE  |
 | Assault  | TRUE  | FALSE  |
 | Disorderly/Reckless Conduct  | TRUE  | FALSE  |
-| Escape  | TRUE  | Content Cell  |
+| Escape  | TRUE  | FALSE  |
 | Firearm Discharge  | TRUE  | FALSE  |
 | Other  | TRUE  | FALSE  |
 | Resisting Arrest/Obstructing Officer  | TRUE  | FALSE  |
 | Vehicle/Traffic  | TRUE  | FALSE  |
-
-
-Although not explicitly leveraged in this story, we also applied a similar method to tagging whether a given charge is policed-related or not. In addition, whether a charge is considered a ‘forcible’ crime. For instance, a police-related charge is largely characterized by resisting arrest or assault against a police officer. Similarly, a forcible classification usually includes charges involving battery but not weapons charges. The following table is an example table used to classify the main dataset. Note: the police and forcible flags were primarily created based on the text of the charge description and not the Tier 2 classification.  
-Police Related and Forcible Flags
 
 
 Classifying each arrest charge according to the aforementioned schemes proved to be a difficult task. For instance, in this analysis, it sufficed to know whether a charge was primarily concerned with Cannabis at a detailed level and then at a higher level, to know it was generally a Drug related charge. However, in just one instance out of thousands, the charge description varied wildly for a subset of cannabis charges. Further, since a given arrest may have multiple charges and the dataset is updated on a daily basis, it became clear that it is not possible to actively map each charge by hand. Worse yet, there was not a one-to-one mapping that would allow us to derive the classifications according to our chosen scheme based on the remaining fields. 
