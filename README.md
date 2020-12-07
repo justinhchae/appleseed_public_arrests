@@ -28,6 +28,9 @@ This data is a single table avaialble in either a zipped csv file or a pickle fi
 * Example: BLACK, WHITE HISPANIC, ASIAN / PACIFIC ISLANDER
 
 
+![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Charges_3_race.png?raw=true)
+
+
 ### The fields in this data about the event include:
 
 | district | beat  |
