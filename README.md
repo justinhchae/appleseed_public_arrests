@@ -1,20 +1,17 @@
-readme
-
 # appleseed_public_arrests data
 
 Project Title: Exploring Detailed Chicago Police Arrest Data
 
-## Project Summary 
+## Project Summary  
+
 This [data](https://github.com/justinhchae/appleseed_public_arrests/tree/main/data) is based on a preimilary analysis of detailed arrest data from the [Chicago Data Portal](https://data.cityofchicago.org/). The data is significant becuase the data, at times, has not been avaialble at all, or it was available without certain datapoints. For instance, these arrest records contain the datetime stamps for arrest, lockup, release from lockup and bond date which have not always been available.
 
-
-Fortunately, we were able to obtain access to the full dataset thanks to the Data Portal team. Based on a bulk download of CPD data, we transformed several columns to help make sense of the data. For example, we extracted year, month, and time of day into separate fields. In addition, we classified every charge into a set of grouped categories. In the resulting dataset, we believe we've added value to this publically available data by categorizing date and time columns and adding classifications to charge descriptions. 
-
+Fortunately, we were able to obtain access to the full dataset thanks to the Data Portal team. Based on a bulk download of CPD data, we transformed several columns to help make sense of the data. For example, we extracted year, month, and time of day into separate fields. In addition, we classified every charge into a set of grouped categories. In the resulting dataset, we believe we've added value to this publically available data by categorizing date and time columns and adding classifications to charge descriptions.  
 
 ![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Distribution_1_Ramp.png?raw=true)
 
-
 ## This Data
+
 To provide transparency in our analysis and to assist others who many be interested in this data, we are sharing a redacted version of the arrest data.
 
 To protect the privacy of individuals, this redacted version of the data removes information such as name, cb number, and date.
@@ -22,20 +19,18 @@ However, the resulting fields in the redacted table represent nearly all the dat
 
 This data is a single table avaialble in either a zipped csv file or a pickle file (exported from the Python Pandas Library). Each row is an instance of an arrest that resulted in a charge. Each arrest has a field (column) that describes the arrested person, police, times, and the nature of the lead charge (charge 1) and follow-on charges if they exist (charge 2, charge 3, charge 4, etc). For this analysis, we focused on charge 1 and started charge 2 but have not completed analysis of multiple charges, yet.
 
-
 ![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Distribution_3_Histogram.png?raw=true)
 
-### The fields in this data about the person include:
+### The fields in this data about the person include  
 
 | race  |
 
 * Race is a string represented as a categorical data type.
 * Example: BLACK, WHITE HISPANIC, ASIAN / PACIFIC ISLANDER
 
-
 ![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Charges_3_race.png?raw=true)
 
-### The fields in this data about the event include:
+### The fields in this data about the event include  
 
 | district | beat  |
 
@@ -44,7 +39,7 @@ This data is a single table avaialble in either a zipped csv file or a pickle fi
 
 ![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Charges_4_district.png?raw=true)
 
-### The fields in this data about the charges include:
+### The fields in this data about the charges include  
 
 | charge_1_statute | charge_1_description  | charge_1_type | charge_1_class  |
 
@@ -53,7 +48,7 @@ This data is a single table avaialble in either a zipped csv file or a pickle fi
 
 ![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Charges_2_detailed.png?raw=true)
 
-### The derived fields in this data about the charges include:
+### The derived fields in this data about the charges include
 
 | charge_1_cat  | charge_1_cat_macro  | police_related_1  | forcible_1  |
 
@@ -63,7 +58,7 @@ This data is a single table avaialble in either a zipped csv file or a pickle fi
 * Police Related and Foricible encode additional dimentions about the charge represented as categorical data types (boolean).
 * Example: charge_1_description (RESISTING/OBSTRUCT/PC OFF/CORR EMP/FRFTR INJ) becomes police_related_1 (TRUE) and charge_1_description (AGG BATTERY/PEACE OFFICER) becomes police_related_1 (TRUE) and forcible_1 (TRUE).
 
-### The derived date and time fields in this data include:
+### The derived date and time fields in this data include  
 
 | arrest_year  | arrest_month  | arrest_time  | lockup_time  | release_time  |
 
@@ -73,11 +68,11 @@ This data is a single table avaialble in either a zipped csv file or a pickle fi
 
 ![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Charges_6_time.png?raw=true)
 
-
 ## How to Use this Data
+
 * The easiest method is to download and unzip the csv file and analyze the data with any system of your choosing. However, for convenience we exported a pickled file from a Pandas DataFrame. The pickled file has the data types encoded directly into the file so categorical values maintain their categories. For instance, we leveraged Pandas DataFrames and set columns with the categorical value as a dtype.
 
-* Download the (.pickle file)[https://github.com/justinhchae/appleseed_public_arrests/blob/main/data/arrests_analysis_public.pickle?raw=true]. From a Python 3.x environment the following code snippet may help read and process the data. 
+* Download the [.pickle file](https://github.com/justinhchae/appleseed_public_arrests/blob/main/data/arrests_analysis_public.pickle?raw=true). From a Python 3.x environment the following code snippet may help read and process the data. 
 ```
 # given a file (arrests_analysis_public.pickle) in a folder called data
 
@@ -94,7 +89,7 @@ print(df.head())
 1  BLACK        6  0634        IBOND     1500   720 ILCS 550.0/4-A  \...
 ```
 
-# From the Author
+## From the Author  
 
 The issue of incommunicado detention in Chicago is at least 30-years old. Although society still struggles with policing and access to justice issues, today, we have the opportunity to analyze data in a way that was previously not available. Electronic records for arrest data go as far back as 2014 and are currently updated regularly by the Chicago Data Portal. After gaining access to detailed records, we jumped at the opportunity to explore the dataset, start analyzing, and share our preliminary results with the public.
 
