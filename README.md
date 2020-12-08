@@ -4,7 +4,7 @@
 
 ## Project Summary  
 
-This [data](https://github.com/justinhchae/appleseed_public_arrests/tree/main/data) is based on a preimilary analysis of detailed arrest data from the [Chicago Data Portal](https://data.cityofchicago.org/). The data is significant becuase the data, at times, has not been avaialble at all, or it was available without certain datapoints. For instance, these arrest records contain the datetime stamps for arrest, lockup, release from lockup and bond date which have not always been available.
+This [data](https://github.com/justinhchae/appleseed_public_arrests/tree/main/data) is based on a preliminary analysis of detailed arrest data from the [Chicago Data Portal](https://data.cityofchicago.org/). The data is significant becuase the data, at times, has not been avaialble at all, or it was available without certain data points. For instance, these arrest records contain the datetime stamps for arrest, lockup, release from lockup and bond date which have not always been available.
 
 Fortunately, we were able to obtain access to the full dataset thanks to the Data Portal team. Based on a bulk download of CPD data, we transformed several columns to help make sense of the data. For example, we extracted year, month, and time of day into separate fields. In addition, we classified every charge into a set of grouped categories. In the resulting dataset, we believe we've added value to this publically available data by categorizing date and time columns and adding classifications to charge descriptions.  
 
@@ -17,7 +17,7 @@ To provide transparency in our analysis and to assist others who many be interes
 To protect the privacy of individuals, this redacted version of the data removes information such as name, cb number, and date.
 However, the resulting fields in the redacted table represent nearly all the data used in the analysis and may be quite helpful in other areas.
 
-This data is a single table avaialble in either a zipped csv file or a pickle file (exported from the Python Pandas Library). Each row is an instance of an arrest that resulted in a charge. Each arrest has a field (column) that describes the arrested person, police, times, and the nature of the lead charge (charge 1) and follow-on charges if they exist (charge 2, charge 3, charge 4, etc). For this analysis, we focused on charge 1 and started charge 2 but have not completed analysis of multiple charges, yet.
+This data is a single table available in either a zipped csv file or a pickle file (exported from the Python Pandas Library). Each row is an instance of an arrest that resulted in a charge. Each arrest has a field (column) that describes the arrested person, police, times, and the nature of the lead charge (charge 1) and follow-on charges if they exist (charge 2, charge 3, charge 4, etc). For this analysis, we focused on charge 1 and started charge 2 but have not completed analysis of multiple charges, yet.
 
 ![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Distribution_3_Histogram.png?raw=true)
 
@@ -34,7 +34,7 @@ This data is a single table avaialble in either a zipped csv file or a pickle fi
 
 | district | beat  |
 
-* Police District and Police Beat number are numbers represented as a categorical data types.
+* Police District and Police Beat number are numbers represented as categorical data types.
 * Example: District (6, 11, 7). Beat (623, 414, 1122).
 
 ![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Charges_4_district.png?raw=true)
@@ -55,7 +55,7 @@ This data is a single table avaialble in either a zipped csv file or a pickle fi
 * Charge Category and Charge Category Macro are a two-tiered classification system that encode the charge descriptions represented as categorical data types.
 * Example: charge_1_description (CANNABIS - POSSESS LESS THAN 2.5 GRMS) becomes charge_1_cat (CANNABIS) and charge_1_cat_macro (Drug)
 
-* Police Related and Foricible encode additional dimentions about the charge represented as categorical data types (boolean).
+* Police Related and Forcible encode additional dimensions about the charge represented as categorical data types (boolean).
 * Example: charge_1_description (RESISTING/OBSTRUCT/PC OFF/CORR EMP/FRFTR INJ) becomes police_related_1 (TRUE) and charge_1_description (AGG BATTERY/PEACE OFFICER) becomes police_related_1 (TRUE) and forcible_1 (TRUE).
 
 ### The derived date and time fields in this data include  
