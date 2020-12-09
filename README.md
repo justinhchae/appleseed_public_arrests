@@ -66,7 +66,7 @@ This data is a single table available in either a zipped csv file or a pickle fi
 * Example: arrest_year (2018, 2019, 2020, ...). arrest_month (1, 2, 3, ...). arrest_time (17:00:00, 18:11:00, 20:16:00, ...)
 * Note: Time timestamp values are created using the [Pandas dt.time extractor](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html) based on the original data's datetime columns.
 
-![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Charges_6_time.png?raw=true)
+![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Graph%208.png?raw=true)
 
 ## How to Use this Data
 
