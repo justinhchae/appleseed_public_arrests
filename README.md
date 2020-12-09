@@ -8,7 +8,7 @@ This [data](https://github.com/justinhchae/appleseed_public_arrests/tree/main/da
 
 Fortunately, we were able to obtain access to the full dataset thanks to the Data Portal team. Based on a bulk download of CPD data, we transformed several columns to help make sense of the data. For example, we extracted (as datetime fields) year, month, and time of day into separate fields. In addition, we classified every charge into a set of grouped categories. In the resulting dataset, we believe we've added value to this publically available data by categorizing date and time columns and adding classifications to charge descriptions.  
 
-![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Distribution_1_Ramp.png?raw=true)
+![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Graph%201.png?raw=true)
 
 ## This Data
 
