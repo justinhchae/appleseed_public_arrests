@@ -103,10 +103,10 @@ At this time, this analysis is inconclusive, but we leave you with four points:
 
 ## Contact
 
-* Chicago Appleseed, http://www.chicagoappleseed.org/
-* Justin Chae, justin.chae@nlaw.northwestern.edu, https://github.com/justinhchae
-* Sarah Staudt, sarahstaudt@chicagoappleseed.org, https://github.com/sarahappleseed
-* Stephanie Agnew, sagnew@chicagoappleseed.org
+* Organization: Chicago Appleseed, http://www.chicagoappleseed.org/
+* Author: Justin Chae, justin.chae@nlaw.northwestern.edu, https://github.com/justinhchae
+* Author and Editor: Sarah Staudt, sarahstaudt@chicagoappleseed.org, https://github.com/sarahappleseed
+* Editor: Stephanie Agnew, sagnew@chicagoappleseed.org
 
 ## Methodology
 
