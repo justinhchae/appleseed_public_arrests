@@ -46,7 +46,7 @@ This data is a single table available in either a zipped csv file or a pickle fi
 * Charge Statute, Descriptions, Type, and Class are provided exactly as given by the Chicago Data Portal and are represented as text.
 * Example: Statute (720 ILCS 5.0/12-1-A). Description (DRIVING/NEVER ISSUED LICENSE). Type (M for Misdemeanor and F for Felony). Class (1 for Class 1 through Class 4, A, B, X...)
 
-![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Charges_2_detailed.png?raw=true)
+![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Graph%204.png?raw=true)
 
 ### The derived fields in this data about the charges include
 
