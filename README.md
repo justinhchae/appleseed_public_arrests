@@ -105,6 +105,7 @@ At this time, this analysis is inconclusive, but we leave you with four points:
 
 * Justin Chae, justin.chae@nlaw.northwestern.edu, https://github.com/justinhchae
 * Sarah Staudt, sarahstaudt@chicagoappleseed.org, https://github.com/sarahappleseed
+* Stephanie Agnew, sagnew@chicagoappleseed.org
 
 ## Methodology
 
