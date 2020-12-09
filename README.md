@@ -19,7 +19,7 @@ However, the resulting fields in the redacted table represent nearly all the dat
 
 This data is a single table available in either a zipped csv file or a pickle file (exported from the Python Pandas Library). Each row is an instance of an arrest that resulted in a charge. Each arrest has a field (column) that describes the arrested person, police, times, and the nature of the lead charge (charge 1) and follow-on charges if they exist (charge 2, charge 3, charge 4, etc). For this analysis, we focused on charge 1 and started calssifying charge 2 but have not completed analysis of multiple charges, yet.
 
-![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Distribution_3_Histogram.png?raw=true)
+![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Graph%203.png?raw=true)
 
 ### The fields in this data about the person include  
 
