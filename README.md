@@ -101,6 +101,10 @@ At this time, this analysis is inconclusive, but we leave you with four points:
 * At this stage of analysis, it is still not clear what factors are responsible for very long holding times — questions along this topic may inform next steps in research.
 * Finally, as we continue to research this dataset and explore relationships to court reform, we are interested in your comments and collaboration.
 
+## Contact
+
+* Justin Chae, justin.chae@nlaw.northwestern.edu, https://github.com/justinhchae
+* Sarah Staudt, sarahstaudt@chicagoappleseed.org, https://github.com/sarahappleseed
 
 ## Methodology
 
