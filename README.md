@@ -37,7 +37,7 @@ This data is a single table available in either a zipped csv file or a pickle fi
 * Police District and Police Beat number are numbers represented as categorical data types.
 * Example: District (6, 11, 7). Beat (623, 414, 1122).
 
-![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Arrests_Charges_4_district.png?raw=true)
+![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Graphs%206%20and%207.png?raw=true)
 
 ### The fields in this data about the charges include  
 
