@@ -96,10 +96,11 @@ The issue of incommunicado detention in Chicago is at least 30-years old. Althou
 
 At this time, this analysis is inconclusive, but we leave you with four points:
 
-* The data herein represents a tremendous opportunity for analysis but is still incomplete. 
-* There are data quality issues that require further investigation and scrutiny — further peer review of our analysis is both necessary and welcome.
+* The data herein represents a tremendous opportunity for analysis but is still incomplete because there are data quality issues that require further investigation and scrutiny — further peer review of our analysis is both necessary and welcome.
+* Since both the law and data suggest that ‘extraordinary cases’ are either arbitrary or racially divided, there may be an opportunity for civilian oversight on police practices as they relate to arrest holding times.
 * At this stage of analysis, it is still not clear what factors are responsible for very long holding times — questions along this topic may inform next steps in research.
 * Finally, as we continue to research this dataset and explore relationships to court reform, we are interested in your comments and collaboration.
+
 
 ## Methodology
 
