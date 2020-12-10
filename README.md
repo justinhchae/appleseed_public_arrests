@@ -1,4 +1,4 @@
-# appleseed_public_arrests data
+# appleseed_public_arrests
 
 ## Project Title: Exploring Detailed Chicago Police Arrest Data
 
