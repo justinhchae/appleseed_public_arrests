@@ -21,6 +21,12 @@ This data is a single table available in either a zipped csv file or a pickle fi
 
 ![alt text](https://github.com/justinhchae/appleseed_public_arrests/blob/main/figures/Graph%203.png?raw=true)
 
+## Disclaimer
+
+The data described herein and in associated stories are a derivative of the source from Chicago Data Portal. Per [the terms of use](https://www.chicago.gov/city/en/narr/foia/data_disclaimer.html) we provide the following dislcaimer:
+
+*This site provides applications using data that has been modified for use from its original source, www.cityofchicago.org, the official website of the City of Chicago.  The City of Chicago makes no claims as to the content, accuracy, timeliness, or completeness of any of the data provided at this site.  The data provided at this site is subject to change at any time.  It is understood that the data provided at this site is being used at one’s own risk.*
+
 ### The fields in this data about the person include  
 
 | race  |
