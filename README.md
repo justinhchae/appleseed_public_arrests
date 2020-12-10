@@ -2,6 +2,10 @@
 
 ## Project Title: Exploring Detailed Chicago Police Arrest Data
 
+## Findings
+
+[Chicago Appleseed](http://www.chicagoappleseed.org/cpd-arrest-holding-times/) or http://www.chicagoappleseed.org/cpd-arrest-holding-times/
+
 ## Project Summary  
 
 This [data](https://github.com/justinhchae/appleseed_public_arrests/tree/main/data) is based on a preliminary analysis of detailed arrest records from the [Chicago Data Portal](https://data.cityofchicago.org/). The arrest dataset is significant becuase the data, at times, has not been avaialble at all, or it was available without certain data points. For instance, these arrest records contain the datetime stamps for arrest, lockup, release from lockup and bond date which have not always been available.
